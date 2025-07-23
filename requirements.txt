@@ -1,0 +1,32 @@
+# Requirements for PDF processing and embedding generation
+# Core PDF processing
+PyPDF2==3.0.1
+pdfplumber==0.10.3
+
+# Machine learning and embeddings
+sentence-transformers==2.2.2
+transformers==4.35.2
+torch==2.1.1
+numpy==1.24.3
+
+# Data processing
+pandas==2.1.3
+scikit-learn==1.3.2
+
+# Database connectivity (optional, for direct DB operations)
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+
+# Utility libraries
+tqdm==4.66.1
+python-dotenv==1.0.0
+click==8.1.7
+
+# Text processing
+nltk==3.8.1
+spacy==3.7.2
+
+# Optional: For advanced PDF processing
+pymupdf==1.23.8
+pdfminer.six==20221105
+
