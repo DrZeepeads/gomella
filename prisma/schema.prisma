@@ -1,0 +1,28 @@
+// Prisma Schema for Gomella's Neonatology Book Dataset
+// This schema defines the database structure for storing PDF content with vector embeddings
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model GomellaBookOfPediatric {
+  id          Int      @id @default(autoincrement())
+  text        String
+  pageNumber  Int?     @map("page_number")
+  sourceFile  String?  @map("source_file")
+  embedding   Json?    // Store vector embeddings as JSON
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("gomella_book_of_pediatric")
+  @@index([pageNumber], name: "idx_gomella_page_number")
+  @@index([sourceFile], name: "idx_gomella_source_file")
+  @@index([sourceFile, pageNumber], name: "idx_gomella_source_page")
+  @@index([createdAt], name: "idx_gomella_created_at")
+}
+

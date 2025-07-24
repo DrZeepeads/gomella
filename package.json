@@ -1,0 +1,41 @@
+{
+  "name": "gomella-neonatology-dataset",
+  "version": "1.0.0",
+  "description": "Gomella's Neonatology book dataset processing and import system",
+  "main": "prisma_import.js",
+  "scripts": {
+    "import": "node prisma_import.js",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "studio": "prisma studio",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma_import.js",
+    "process-pdfs": "python run_processing.py",
+    "setup": "npm install && prisma generate",
+    "dev": "node -r dotenv/config prisma_import.js"
+  },
+  "keywords": [
+    "medical",
+    "neonatology",
+    "pdf-processing",
+    "embeddings",
+    "vector-search",
+    "prisma",
+    "postgresql"
+  ],
+  "author": "Codegen Bot",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
+
